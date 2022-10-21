@@ -9,14 +9,67 @@
 
 </head>
 <body>
-    <p>Score: <span id="score">0</span></p>
-<div class="picture">
-    <img src="planet.png" onclick="addToScore(clickingPower)">
+    <div class="sectionLeft">
+    <center>
+        <div class="scoreContainer">
+    <span id="score">0</span> People<br>
+    <div class="clickerContainer">
+    <img draggable="false" id="planet" src="planet.png"  onclick="addToScore(clickingPower)">
+    </div>
+    </center>
 </div>
 
-    <button onclick="buyClicker()">Clicker [</span id"clickercost">15</span>] -- <span id="clickers">0</span></button>
-    <button onclick="buyClicker()">Clicker [</span id"clickercost">15</span>] -- <span id="clickers">0</span></button>
-    
+<div class="sectionRight">
+    <table class="shopButton unselectable" id="cursor">
+        <tr>
+            <td id="image"><img src="cursor.png"></td>
+            <td id="nameAndCost">
+                <p>Cursor</p>
+                <p><span id="cursorcost">50</span> People</p>
+            </td>
+            <td id="amount"><span id="cursors">0</span></td>
+        </tr>
+    </table>
+    <table class="shopButton unselectable" id="clicker">
+        <tr>
+            <td id="image"><img src="clicker.png"></td>
+            <td id="nameAndCost">
+                <p>Clicker</p>
+                <p><span id="clickingpowercost">150</span> People</p>
+            </td>
+            <td id="amount"><span id="clickers">0</span></td>
+        </tr>
+    </table>
+        <table class="shopButton1 unselectable" id="mars1">
+            <tr>
+                <td id="image"><img src="mars.png"></td>
+                <td id="nameAndCost">
+                    <p>Mars</p>
+                    <p><span id="marscost">1000</span> People</p>
+                </td>
+                <td id="amount"><span id="marss">0</span></td>
+            </tr>
+    </table>
+        <table class="shopButton2 unselectable" id="jupiter1">
+            <tr>
+                <td id="image"><img src="jupiter.png"></td>
+                <td id="nameAndCost">
+                    <p>Jupiter</p>
+                    <p><span id="jupitercost">7500</span> People</p>
+                </td>
+                <td id="amount"><span id="jupiters">0</span></td>
+            </tr>
+    </table>
+        <table class="shopButton3 unselectable" id="saturn1">
+            <tr>
+                <td id="image"><img src="saturn.png"></td>
+                <td id="nameAndCost">
+                    <p>Saturn</p>
+                    <p><span id="saturncost">20000</span> People</p>
+                </td>
+                <td id="amount"><span id="saturn">0</span></td>
+            </tr>
+</div>
 </body>
 </html>
 
