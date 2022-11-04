@@ -27,11 +27,13 @@ var uranus_EL = document.getElementById("uranus1")
 var uranuscost_EL = document.getElementById("uranuscost")
 var uranuss_EL = document.getElementById("uranuss")
 
+var boost_EL = document.getElementById("boost")
+
 var scorePerSecond = 0; 
 var score = 0;
 var cursorCost = 50;
 var cursors = 0;
-var clickingPower = 10000;
+var clickingPower = 1;
 var clickingpowerCost = 150;
 var clickers = 0;
 var marsCost = 1000;
@@ -51,6 +53,7 @@ var uranus = 0;
 var uranuss = 0;
 
 var boost = 0;
+var boostpower = 0;
 
 
 function buyCursor() {
@@ -144,18 +147,11 @@ function buyUranus() {
 }
 
 
-function Boost() {
-
-}
-
-
-
-
-
-
-function addToScore(amount) {
-    score = score + amount;
+function addToScore() {
+    boost++;
+    score += clickingPower + boostpower;
     score_EL.innerHTML = score;
+    boost_EL.innerHTML = boost;
 }
 
 function updateScorePerSecond() {
@@ -181,4 +177,34 @@ setInterval(function() {
     score += scorePerSecond;
     score_EL.innerHTML = score;
     scorepersecond_EL.innerHTML = scorePerSecond;
-}, 1000); //100ms = 1s
+
+    console.log(boost)
+
+    
+}, 1000); //1000ms = 1s
+
+
+setInterval(function() {
+    if (boost > 30) {
+        boost -= 3
+    }
+    else if (boost > 10) {
+        boost -= 2
+    }
+    else if (boost > 0) {
+        boost -= 1
+    }
+    
+
+
+    if (boost >= 10){
+        boostpower = clickingPower * 3
+    }
+
+    if (boost <= 10) {
+        boostpower = 0
+    }
+
+    boost_EL.innerHTML = boost;
+
+}, 300); //100ms = 0.1s
